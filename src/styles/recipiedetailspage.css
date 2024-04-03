@@ -1,0 +1,78 @@
+.buttonG {
+    background-color: #0095ff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px 3rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.buttonG:hover,
+.buttonG:focus {
+    background-color: #07c;
+}
+
+.buttonG:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.buttonG:active {
+    background-color: #0064bd;
+    box-shadow: none;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.recipe-details {
+    margin-top: 20px;
+}
+
+.recipe-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.recipe-details img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.recipe-details h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.recipe-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recipe-details ul li {
+    margin-bottom: 5px;
+}
+
+.recipe-details p {
+    line-height: 1.5;
+}
