@@ -34,6 +34,7 @@ function RecipeDetailsPage() {
         setRecipe(data);
       }
     } catch (error) {
+      setNotFound(true);
       console.error("Error fetching recipe:", error);
     }
   };
