@@ -1,12 +1,14 @@
+// RecipeDetailsPage.js
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, Navigate } from "react-router-dom";
 import "../styles/recipiedetailspage.css";
 import axios from "axios";
 
 function RecipeDetailsPage() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     fetchRecipe();
@@ -26,11 +28,19 @@ function RecipeDetailsPage() {
         }
       );
 
-      setRecipe(data);
+      if (data.hasOwnProperty("code") && data.code === 404) {
+        setNotFound(true);
+      } else {
+        setRecipe(data);
+      }
     } catch (error) {
       console.error("Error fetching recipe:", error);
     }
   };
+
+  if (notFound) {
+    return <Navigate to="/not-found" />;
+  }
 
   if (!recipe) {
     return <div>Loading...</div>;
@@ -39,7 +49,7 @@ function RecipeDetailsPage() {
   return (
     <div className="container">
       <NavLink to={"/"}>
-        <button className="buttonG">Home</button>
+        <button className="button">Home</button>
       </NavLink>
       <div className="recipe-details">
         <h2>{recipe.title}</h2>
